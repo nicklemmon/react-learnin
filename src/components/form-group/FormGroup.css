@@ -1,0 +1,50 @@
+:local(.FormGroup),
+:local(.FormElement) {
+  width: 100%;
+}
+
+:local(.FormGroup ~ *) {
+  margin-top: var(--md-spacing);
+}
+
+:local(.Label) {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: var(--xs-spacing);
+  color: var(--bossanova);
+}
+
+:local(.FormGroupContents) {
+  display: flex;
+}
+
+:local(.FormElement) {
+  display: inline-block;
+  border: 2px solid var(--wine-berry);
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  background: var(--white);
+  color: var(--bossanova);
+  padding: var(--md-spacing);
+}
+
+:local(.FormButton) {
+  display: inline-flex;
+  background: var(--aquamarine);
+  color: var(--lochinvar);
+  font-size: 1rem;
+  font-weight: 400;
+  padding: var(--md-spacing);
+  margin-left: var(--sm-spacing);
+  width: 5rem;
+  border: 0;
+  cursor: pointer;
+  border: 2px solid var(--lochinvar);
+  border-radius: var(--border-radius);
+  position: relative; /* allows absolute positioning within */
+  transition: transform var(--anim-dur) var(--anim-easing);
+}
+
+:local(.FormButton:hover) {
+  transform: scale(1.05);
+}

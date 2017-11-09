@@ -1,0 +1,65 @@
+:local(.Card) {
+ background: var(--white);
+ overflow: hidden;
+ border-radius: var(--border-radius);
+ border: 2px solid var(--bossanova);
+ box-shadow: 0 20px 20px -15px rgba(0, 0, 0, 0.15);
+ width: 100%;
+}
+
+:local(.CardHeader) {
+ color: var(--light-gray);
+ background: var(--wine-berry);
+ margin: 0;
+ padding: var(--md-spacing);
+ font-weight: normal;
+ font-size: 0.85rem;
+ font-weight: 700;
+ letter-spacing: 0.05rem;
+}
+
+:local(.CardList) {
+ padding: 0;
+ margin: 0;
+}
+
+:local(.CardListItem) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--bossanova);
+  padding: var(--md-spacing);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  list-style-type: none;
+  cursor: pointer;
+  position: relative; /* allows absolute positioning within */
+  transition: background var(--anim-dur) var(--anim-easing);
+}
+
+:local(.CardListItem:last-of-type) {
+  border-bottom: 0;
+}
+
+:local(.CardListItem:hover) {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* this is the circle! */
+:local(.CardListItem:after) {
+  content: '';
+  height: var(--sm-spacing);
+  width: var(--sm-spacing);
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--med-gray);
+  transition: transform 0.33s var(--anim-easing),
+              border var(--anim-dur) var(--anim-easing);
+}
+
+:local(.CardListItem:hover:after),
+:local(.CardListItem:focus:after) {
+  color: var(--lochinvar);
+  border-color: var(--aquamarine);
+  background: var(--light-gray);
+  transform: scale(1.75);
+}
