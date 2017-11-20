@@ -31,7 +31,7 @@
 :local(.FormButton) {
   display: inline-flex;
   background: var(--aquamarine);
-  color: var(--lochinvar);
+  color: var(--bossanova);
   font-size: 1rem;
   font-weight: 400;
   padding: var(--md-spacing);
@@ -42,9 +42,11 @@
   border: 2px solid var(--lochinvar);
   border-radius: var(--border-radius);
   position: relative; /* allows absolute positioning within */
-  transition: transform var(--anim-dur) var(--anim-easing);
+  transition: border-color var(--anim-dur) var(--anim-easing),
+              color var(--anim-dur) var(--anim-easing);
 }
 
 :local(.FormButton:hover) {
-  transform: scale(1.05);
+  border-color: var(--aquamarine);
+  color: var(--lochinvar);
 }

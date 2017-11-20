@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import styles from './FormGroup.css';
 
 class FormElement extends Component {
-  constructor( props ) {
-    super( props );
-  }
-
   render() {
     return (
       <input 

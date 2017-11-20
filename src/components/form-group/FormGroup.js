@@ -9,8 +9,6 @@ class FormGroup extends Component {
   render() {
     const hasButton = this.props.hasButton;
 
-    let button = null;
-
     return (
       <div className={ styles.FormGroup}>
         <Label 
