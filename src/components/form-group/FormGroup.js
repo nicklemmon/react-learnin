@@ -13,13 +13,24 @@ class FormGroup extends Component {
 
     return (
       <div className={ styles.FormGroup}>
-        <Label for={ this.props.id } content={ this.props.labelContent }></Label>
+        <Label 
+          for={ this.props.id } 
+          content={ this.props.labelContent }>
+        </Label>
 
         <div className={ styles.FormGroupContents }>
-          <FormElement id={ this.props.id } placeholder={ this.props.placeholder } type={ this.props.type }></FormElement>
+          <FormElement 
+            onChange={ this.props.onChange }
+            onKeyPress={ this.props.formElementKeyPressMethod } 
+            value={ this.props.formElementValue }
+            id={ `${this.props.id}-form-element` } 
+            placeholder={ this.props.placeholder } 
+            type={ this.props.type } />
 
           { hasButton === true &&
-            <FormButton clickMethod={ this.props.buttonClickMethod } content={ this.props.buttonContent }></FormButton>
+            <FormButton 
+              clickMethod={ this.props.buttonClickMethod } 
+              content={ this.props.buttonContent } />
           }
         </div>
       </div>

@@ -7,35 +7,72 @@ import styles from './App.css';
 import Card from './components/card/Card.js';
 import FormGroup from './components/form-group/FormGroup.js';
 
-let todoList = [];
-
 class App extends Component {
   constructor( props ) {
     super( props );
     this.state = {
-      todoList: []
+      todoList: [],
+      formElementValue: ''
     }
 
-    this.updateList = this.updateList.bind( this );
+    this.addItem = this.addItem.bind( this );
+    this.removeItem = this.removeItem.bind( this );
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  updateList( event ) {
-    const siblingInput = event.target.previousElementSibling;
+  handleChange = ( event ) => {
+    this.setState({
+      formElementValue: event.target.value
+    });
+  }
+
+  addItem = () => {
+    let el = document.getElementById( 'todo-form-element' ),
+        val = el.value;
 
     this.setState({ 
-      todoList: [ ...this.state.todoList,siblingInput.value ]
+      todoList: [ ...this.state.todoList, val ],
+      formElementValue: ''
     });
-
-    console.log( this.state );
-
-    siblingInput.value = '';
   }
 
-  render() {
+  removeItem = ( event ) => {
+    let array = this.state.todoList,
+        el = event.target,
+        content = el.innerHTML,
+        index = array.indexOf( content );
+
+    array.splice( index, 1 );
+
+    this.setState({ todoList: array });
+  }
+
+  handleKeyPress = ( event ) => {
+    if ( event.key === 'Enter' ) {
+      this.addItem();
+    }
+  }
+
+  render = () => {
+    const formElementValue = this.state.formElementValue;
+
     return (
       <div className={ styles.App }>
-        <FormGroup hasButton={ true } buttonClickMethod={ this.updateList }  buttonContent="Add" labelContent="Todo Item" id="todo-items" placeholder="i.e., 'walk the dog'" type="text"/>
-        <Card listArray={ this.state.todoList }></Card>
+        <FormGroup 
+          id="todo" 
+          hasButton={ true } 
+          onChange={ this.handleChange }
+          formElementValue={ formElementValue }
+          formElementKeyPressMethod={ this.handleKeyPress } 
+          buttonClickMethod={ this.addItem }  
+          buttonContent="Add" 
+          labelContent="Todo Item" 
+          placeholder="i.e., 'walk the dog'" type="text"/>
+
+        <Card 
+          listItemClickMethod={ this.removeItem } 
+          listArray={ this.state.todoList }>
+        </Card>
       </div>
     );
   }

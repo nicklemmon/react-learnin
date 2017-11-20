@@ -8,7 +8,7 @@ class Card extends Component {
   return (
    <div className={ styles.Card }>
     <CardHeader content="Nick's todo list"></CardHeader>
-    <CardList itemContents={ this.props.listArray }></CardList>
+    <CardList itemClickMethod={ this.props.listItemClickMethod } itemContents={ this.props.listArray }></CardList>
    </div>
   )
  }
