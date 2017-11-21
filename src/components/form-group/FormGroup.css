@@ -4,7 +4,7 @@
 }
 
 :local(.FormGroup ~ *) {
-  margin-top: var(--md-spacing);
+  margin-top: var(--sm-spacing);
 }
 
 :local(.Label) {
@@ -20,8 +20,10 @@
 
 :local(.FormElement) {
   display: inline-block;
-  border: 2px solid var(--wine-berry);
+  border: 0;
   font-size: 1rem;
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--med-gray);
   border-radius: var(--border-radius);
   background: var(--white);
   color: var(--bossanova);
@@ -39,14 +41,11 @@
   width: 5rem;
   border: 0;
   cursor: pointer;
-  border: 2px solid var(--lochinvar);
   border-radius: var(--border-radius);
   position: relative; /* allows absolute positioning within */
-  transition: border-color var(--anim-dur) var(--anim-easing),
-              color var(--anim-dur) var(--anim-easing);
+  transition: color var(--anim-dur) var(--anim-easing);
 }
 
 :local(.FormButton:hover) {
-  border-color: var(--aquamarine);
   color: var(--lochinvar);
 }
