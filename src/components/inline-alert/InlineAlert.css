@@ -1,0 +1,15 @@
+:local(.InlineAlert) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+:local(.InlineAlertIcon) {
+  margin-right: var(--xs-spacing);
+}
+
+:local(.InlineAlertError) {
+  color: var(--mulberry);
+}

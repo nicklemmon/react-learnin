@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import styles from './FormGroup.css';
 
-import Label from './Label.js';
+import FormLabel from './FormLabel.js';
 import FormElement from './FormElement.js';
 import FormButton from './FormButton.js';
+import InlineAlert from '../inline-alert/InlineAlert.js';
 
 class FormGroup extends Component {
   render() {
+    const alertState = this.props.alertState;
     const hasButton = this.props.hasButton;
 
     return (
       <div className={ styles.FormGroup}>
-        <Label 
+        <FormLabel
           for={ this.props.id } 
           content={ this.props.labelContent }>
-        </Label>
+        </FormLabel>
 
         <div className={ styles.FormGroupContents }>
           <FormElement 
@@ -31,6 +33,10 @@ class FormGroup extends Component {
               content={ this.props.buttonContent } />
           }
         </div>
+
+        { alertState === 'error' &&
+          <InlineAlert classNames={ styles.FormInlineAlert } alertType="error" alertContent={ this.props.alertErrorContent } />
+        }
       </div>
     )
   }

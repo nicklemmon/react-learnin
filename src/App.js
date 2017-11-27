@@ -11,7 +11,8 @@ class App extends Component {
     super( props );
     this.state = {
       todoList: [],
-      formElementValue: ''
+      formElementValue: '',
+      formGroupAlertState: ''
     }
 
     this.addItem = this.addItem.bind( this );
@@ -21,17 +22,27 @@ class App extends Component {
 
   handleChange = ( event ) => {
     this.setState({
-      formElementValue: event.target.value
+      formElementValue: event.target.value,
+      formGroupAlertState: ''
     });
   }
 
   addItem = () => {
     let el = document.getElementById( 'todo-form-element' ),
-        val = el.value;
+        val = el.value,
+        formGroupAlertState = null;
+
+    if ( val.length === 0 ) {
+      formGroupAlertState = 'error';
+    } else {
+      this.setState({
+        todoList: [ ...this.state.todoList, val ]
+      })
+    }
 
     this.setState({ 
-      todoList: [ ...this.state.todoList, val ],
-      formElementValue: ''
+      formElementValue: '',
+      formGroupAlertState: formGroupAlertState
     });
   }
 
@@ -62,7 +73,9 @@ class App extends Component {
           hasButton={ true } 
           onChange={ this.handleChange }
           formElementValue={ formElementValue }
-          formElementKeyPressMethod={ this.handleKeyPress } 
+          formElementKeyPressMethod={ this.handleKeyPress }
+          alertState={ this.state.formGroupAlertState }
+          alertErrorContent="You can't add nothing to a todo list!"
           buttonClickMethod={ this.addItem }  
           buttonContent="Add" 
           labelContent="Todo Item" 

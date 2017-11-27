@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import GoCheck from 'react-icons/lib/go/check';
 import styles from './Card.css';
+import CardListItem from './CardListItem.js';
 
 function CardList( props ) {
   const itemContents = props.itemContents;
@@ -10,20 +9,12 @@ function CardList( props ) {
   let listItems;
 
   if ( itemContents.length < 1 ) {
-    listItems = <div className={ styles.CardContent }>No items found.</div>
+    listItems = <div className={ styles.CardContent }>Nothing left to do...</div>
   } else {
     listItems = itemContents.map( ( itemContent ) =>
-        <li 
-          onClick={ itemClickMethod } 
-          className={ styles.CardListItem } 
-          key={ `${itemContent}-${Math.random(1, 100)}` } 
-          value={ itemContent } 
-          tabIndex="0" 
-          role="button">
-          { itemContent }
-
-          <GoCheck className={ styles.CardListIcon}/>
-        </li>
+        <CardListItem
+          clickMethod={ itemClickMethod }
+          itemContent={ itemContent }/>
       );
     }
 

@@ -4,7 +4,7 @@
 }
 
 :local(.FormGroup ~ *) {
-  margin-top: var(--sm-spacing);
+  margin-top: var(--md-spacing);
 }
 
 :local(.Label) {
@@ -22,7 +22,7 @@
   display: inline-block;
   border: 0;
   font-size: 1rem;
-  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.125);
   border: 1px solid var(--med-gray);
   border-radius: var(--border-radius);
   background: var(--white);
@@ -48,4 +48,8 @@
 
 :local(.FormButton:hover) {
   color: var(--lochinvar);
+}
+
+:local(.FormInlineAlert) {
+  margin-top: 2px;
 }

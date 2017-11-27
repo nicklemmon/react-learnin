@@ -1,9 +1,8 @@
 :local(.Card) {
  background: var(--white);
  overflow: hidden;
- border: 1px solid var(--med-gray);
  border-radius: var(--border-radius);
- box-shadow: 0 20px 20px -15px rgba(0, 0, 0, 0.1);
+ box-shadow: 0 25px 20px -20px rgba(0, 0, 0, 0.05);
  width: 100%;
 }
 
@@ -33,15 +32,11 @@
   align-items: center;
   color: var(--bossanova);
   padding: var(--md-spacing);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid var(--light-gray);
   list-style-type: none;
   cursor: pointer;
   position: relative; /* allows absolute positioning within */
   transition: background var(--anim-dur) var(--anim-easing);
-}
-
-:local(.CardListItem.isChecked) {
-  text-decoration: strikethrough;
 }
 
 :local(.CardListItem:last-of-type) {
@@ -49,7 +44,7 @@
 }
 
 :local(.CardListItem:hover) {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.0125);
 }
 
 /* this is the circle! */
@@ -74,4 +69,3 @@
   background: var(--aquamarine);
   transform: scale(1.25);
 }
-

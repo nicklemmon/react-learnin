@@ -1,13 +1,14 @@
 :root {
   --white: #fff;
-  --light-gray: #fafafa;
+  --light-gray: #f0f0f0;
   --med-gray: #7a7a7a;
   --dark-gray: #696969;
-  --aquamarine: #69F4BD;
+  --aquamarine: #69f4bd;
   --lochinvar: #319589;
-  --san-juan: #344D6C;
+  --mulberry: #C14078;
+  --san-juan: #344d6c;
   --bossanova: #372650;
-  --wine-berry: #3E1B3C;
+  --wine-berry: #3e1b3c;
   --xs-spacing: 5px;
   --sm-spacing: 10px;
   --md-spacing: 20px;
@@ -31,7 +32,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: var(--light-gray);
+  background: rgba(0, 0, 0, 0.025);
 }
 
 body,

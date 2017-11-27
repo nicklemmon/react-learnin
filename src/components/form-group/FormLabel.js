@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from './FormGroup.css';
 
-class Label extends Component {
+class FormLabel extends Component {
   render() {
     return (
       <label className={ styles.Label } htmlFor={ this.props.for }>
@@ -11,4 +11,4 @@ class Label extends Component {
   }
 }
 
-export default Label;
+export default FormLabel;
