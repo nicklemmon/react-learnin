@@ -11,10 +11,12 @@ function CardList( props ) {
   if ( itemContents.length < 1 ) {
     listItems = <div className={ styles.CardContent }>Nothing left to do...</div>
   } else {
-    listItems = itemContents.map( ( itemContent ) =>
+    listItems = itemContents.map( ( itemContent, index ) =>
         <CardListItem
           clickMethod={ itemClickMethod }
-          itemContent={ itemContent }/>
+          itemContent={ itemContent }
+          key={ index }
+          />
       );
     }
 

@@ -7,8 +7,7 @@ class CardListItem extends Component {
     return (
       <li 
         onClick={ this.props.clickMethod } 
-        className={ styles.CardListItem } 
-        key={ `${ this.props.itemContent }-${Math.random(1, 100)}` } 
+        className={ styles.CardListItem }
         value={ this.props.itemContent } 
         tabIndex="0" 
         role="button">

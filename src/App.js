@@ -49,8 +49,8 @@ class App extends Component {
   removeItem = ( event ) => {
     let array = this.state.todoList,
         el = event.target,
-        content = el.innerHTML,
-        index = array.indexOf( content );
+        key = el.value.toString(),
+        index = array.indexOf( key );
 
     array.splice( index, 1 );
 
