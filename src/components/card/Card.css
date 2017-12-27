@@ -1,5 +1,6 @@
 :local(.Card) {
  background: var(--white);
+ border: 1px solid var(--med-gray);
  overflow: hidden;
  border-radius: var(--border-radius);
  box-shadow: 0 25px 20px -20px rgba(0, 0, 0, 0.05);
